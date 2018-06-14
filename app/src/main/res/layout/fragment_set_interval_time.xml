@@ -1,0 +1,76 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.armhandstudios.apps.intervaltimer.SetIntervalTime">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Activity Name"
+            android:id="@+id/activityNameText"
+            android:layout_width="wrap_content"
+            android:background="@android:color/transparent"
+            android:paddingBottom="3dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="1dp"
+            android:paddingTop="3dp"
+            android:cursorVisible="false"/>
+
+        <TextView
+            android:text=":"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/colon"
+            android:textColor="?attr/editTextColor"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/activityNameText"
+            android:layout_alignBottom="@+id/activityNameText"
+            android:layout_toRightOf="@+id/activityNameText"
+            android:layout_toEndOf="@+id/activityNameText"
+            android:paddingBottom="3dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="3dp"
+            android:paddingTop="3dp"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:id="@+id/timerCount"
+            android:singleLine="true"
+            android:text="30"
+            android:maxLength="3"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/colon"
+            android:layout_toEndOf="@+id/colon"
+            android:background="@android:color/transparent"
+            android:paddingBottom="3dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="1dp"
+            android:paddingTop="3dp"
+            android:cursorVisible="false"/>
+
+        <TextView
+            android:text="seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeUnitsText"
+            tools:text="seconds"
+            android:textColor="?attr/editTextColor"
+            android:layout_alignBottom="@+id/colon"
+            android:layout_toRightOf="@+id/timerCount"
+            android:layout_toEndOf="@+id/timerCount"
+            android:paddingBottom="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="3dp"
+            android:paddingLeft="1dp"/>
+    </RelativeLayout>
+
+</FrameLayout>

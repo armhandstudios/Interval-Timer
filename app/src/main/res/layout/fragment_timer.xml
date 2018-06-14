@@ -1,0 +1,64 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".Timer">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:text="30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/timerCounts"
+            android:editable="false"
+            tools:textColor="@android:color/black"
+            android:textColor="@android:color/black"
+            android:textSize="36sp"
+            android:layout_alignBaseline="@+id/decrementTimer"
+            android:layout_alignBottom="@+id/decrementTimer"
+            android:layout_toRightOf="@+id/decrementTimer"
+            android:layout_toEndOf="@+id/decrementTimer"
+            android:textIsSelectable="false"
+            android:numeric="integer"/>
+
+        <TextView
+            android:text="seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/secondsText"
+            android:textColor="@android:color/black"
+            android:layout_alignBaseline="@+id/timerCounts"
+            android:layout_alignBottom="@+id/timerCounts"
+            android:layout_toRightOf="@+id/timerCounts"
+            android:layout_toEndOf="@+id/timerCounts"/>
+
+        <Button
+            android:text="+"
+            android:id="@+id/incrementTimer"
+            android:textSize="36sp"
+            android:textStyle="normal|bold"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/secondsText"
+            android:layout_toEndOf="@+id/secondsText"/>
+
+        <Button
+            android:text="-"
+            android:id="@+id/decrementTimer"
+            android:textSize="36sp"
+            android:textStyle="normal|bold"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+
+    </RelativeLayout>
+</FrameLayout>
