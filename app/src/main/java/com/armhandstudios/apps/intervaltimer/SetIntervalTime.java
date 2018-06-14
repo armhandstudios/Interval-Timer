@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class SetIntervalTime extends Fragment
 {
     boolean canBeZero;
+    int prevValue;
 
     EditText activityNameText;
     EditText timerCount;
@@ -27,6 +28,7 @@ public class SetIntervalTime extends Fragment
         View view = inflater.inflate(R.layout.fragment_set_interval_time, container, false);
 
         canBeZero = true;
+        prevValue = 30;
 
         activityNameText = (EditText) view.findViewById(R.id.activityNameText);
         timerCount = (EditText) view.findViewById(R.id.timerCount);
@@ -57,10 +59,15 @@ public class SetIntervalTime extends Fragment
                         if(hasFocus)
                         {
                             timerCount.setCursorVisible(true);
+                            prevValue = getTimerValue();
                         }
                         else
                         {
                             timerCount.setCursorVisible(false);
+                        }
+                        if(timerCount.getText().toString().equals(""))
+                        {
+                            timerCount.setText(String.valueOf(prevValue));
                         }
                         if(!canBeZero && Integer.parseInt(timerCount.getText().toString()) == 0)
                         {

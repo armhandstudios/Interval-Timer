@@ -17,6 +17,8 @@ import android.widget.EditText;
  */
 public class RepsFragment extends Fragment
 {
+    int prevValue;
+
     CheckBox infiniteReps;
     EditText nReps;
 
@@ -25,6 +27,7 @@ public class RepsFragment extends Fragment
     {
         View view = inflater.inflate(R.layout.fragment_reps, container, false);
 
+        prevValue = 10;
         infiniteReps = (CheckBox) view.findViewById(R.id.useRepsCheck);
         nReps = (EditText) view.findViewById(R.id.enterReps);
 
@@ -35,6 +38,23 @@ public class RepsFragment extends Fragment
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                     {
                         //can disable edittext here if correct states have been entered in xml
+                    }
+                }
+        );
+        nReps.setOnFocusChangeListener(
+                new View.OnFocusChangeListener()
+                {
+                    @Override
+                    public void onFocusChange(View v, boolean hasFocus)
+                    {
+                        if(hasFocus)
+                        {
+                            prevValue = getReps();
+                        }
+                        else
+                        {
+                            nReps.setText(String.valueOf(prevValue));
+                        }
                     }
                 }
         );

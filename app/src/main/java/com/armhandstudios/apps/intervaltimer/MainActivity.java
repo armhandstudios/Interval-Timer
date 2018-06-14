@@ -57,5 +57,6 @@ public class MainActivity extends AppCompatActivity
     }
 }
 
-//TODO: Handle rotation
-//TODO: Add reps
+//TODO: Activity Name takes length of hint, not current text;
+//TODO: EditText focus shenanigans
+//TODO: Maybe change background color and move stuff around, make it look nicer?

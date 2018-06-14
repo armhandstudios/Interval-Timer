@@ -179,8 +179,6 @@ public class TimerRunning extends AppCompatActivity
                 }
                 timerHandler.postDelayed(toRun, 1000);
             }
-
-
         };
         timerHandler.post(ready);
     }
