@@ -150,6 +150,8 @@ public class TimerRunning extends AppCompatActivity
                     else
                     {
                         activityTimer.setText(String.valueOf(mainTime));
+                        reps--;
+                        setRepsText();
                         tone();
                     }
                 }

@@ -15,35 +15,28 @@
     android:focusableInTouchMode="true"
     android:clickable="true">
 
-    <Button
-        android:text="Start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
-        android:id="@+id/startTimerButton"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
-
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:name="com.armhandstudios.apps.intervaltimer.SetIntervalTime"
         android:id="@+id/mainTimerFragment"
+        tools:layout="@layout/fragment_set_interval_time"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        tools:layout="@layout/fragment_set_interval_time"/>
+        android:layout_marginTop="16dp"/>
 
     <fragment
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:name="com.armhandstudios.apps.intervaltimer.SetIntervalTime"
+        android:id="@+id/secondaryTimerFragment"
+        tools:layout="@layout/fragment_set_interval_time"
         android:layout_below="@+id/mainTimerFragment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp"
-        android:id="@+id/secondaryTimerFragment"
-        tools:layout="@layout/fragment_set_interval_time"/>
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
 
     <fragment
         android:layout_width="wrap_content"
@@ -51,9 +44,17 @@
         android:name="com.armhandstudios.apps.intervaltimer.RepsFragment"
         android:id="@+id/repsFragment"
         tools:layout="@layout/fragment_reps"
-        android:layout_marginTop="10dp"
         android:layout_below="@+id/secondaryTimerFragment"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
+
+    <Button
+        android:text="Start"
+        android:layout_height="100dp"
+        android:id="@+id/startTimerButton"
+        android:layout_width="250dp"
+        android:textSize="36sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
