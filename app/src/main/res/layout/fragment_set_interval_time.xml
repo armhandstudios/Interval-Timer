@@ -21,7 +21,10 @@
             android:paddingLeft="3dp"
             android:paddingRight="1dp"
             android:paddingTop="3dp"
-            android:cursorVisible="false"/>
+            android:cursorVisible="false"
+            android:singleLine="true"
+            android:maxEms="10"
+            />
 
         <TextView
             android:text=":"

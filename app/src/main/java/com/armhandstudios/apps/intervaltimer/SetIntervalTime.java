@@ -45,6 +45,14 @@ public class SetIntervalTime extends Fragment
                         }
                         else
                         {
+                            if(activityNameText.getText().toString().equals(""))
+                            {
+                                activityNameText.setHint("Activity Name");
+                            }
+                            else
+                            {
+                                activityNameText.setHint(null);
+                            }
                             activityNameText.setCursorVisible(false);
                         }
                     }

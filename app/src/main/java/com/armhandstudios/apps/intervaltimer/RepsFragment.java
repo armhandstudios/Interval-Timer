@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 /**
@@ -21,15 +22,17 @@ public class RepsFragment extends Fragment
 
     CheckBox infiniteReps;
     EditText nReps;
+    TextView repsText;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+    public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View view = inflater.inflate(R.layout.fragment_reps, container, false);
 
         prevValue = 10;
         infiniteReps = (CheckBox) view.findViewById(R.id.useRepsCheck);
         nReps = (EditText) view.findViewById(R.id.enterReps);
+        repsText = (TextView) view.findViewById(R.id.enterRepsText);
 
         infiniteReps.setOnCheckedChangeListener(
                 new CompoundButton.OnCheckedChangeListener()
@@ -37,7 +40,9 @@ public class RepsFragment extends Fragment
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                     {
-                        //can disable edittext here if correct states have been entered in xml
+                        nReps.setEnabled(!isChecked);
+                        repsText.setEnabled(!isChecked);
+
                     }
                 }
         );
@@ -53,7 +58,10 @@ public class RepsFragment extends Fragment
                         }
                         else
                         {
-                            nReps.setText(String.valueOf(prevValue));
+                            if(nReps.getText().toString().equals("") || Integer.valueOf(nReps.getText().toString()) == 0)
+                            {
+                                nReps.setText(String.valueOf(prevValue));
+                            }
                         }
                     }
                 }

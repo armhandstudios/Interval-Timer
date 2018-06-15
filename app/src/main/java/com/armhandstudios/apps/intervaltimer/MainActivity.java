@@ -6,8 +6,10 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -57,6 +59,4 @@ public class MainActivity extends AppCompatActivity
     }
 }
 
-//TODO: Activity Name takes length of hint, not current text;
-//TODO: EditText focus shenanigans
 //TODO: Maybe change background color and move stuff around, make it look nicer?

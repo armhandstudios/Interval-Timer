@@ -47,6 +47,7 @@
             android:layout_alignBaseline="@+id/enterRepsText"
             android:layout_alignBottom="@+id/enterRepsText"
             android:layout_toRightOf="@+id/enterRepsText"
-            android:layout_toEndOf="@+id/enterRepsText"/>
+            android:layout_toEndOf="@+id/enterRepsText"
+            android:maxLength="3"/>
     </RelativeLayout>
 </FrameLayout>

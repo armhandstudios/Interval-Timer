@@ -39,7 +39,8 @@
         android:textColor="@android:color/black"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="93dp"/>
+        android:layout_marginTop="93dp"
+        android:textAlignment="center"/>
 
     <TextView
         android:text="0"
