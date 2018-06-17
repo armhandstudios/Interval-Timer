@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Interval Timer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_timer_running">timerRunning</string>
+    <string name="start_button_text">Start</string>
+    <string name="colon">:</string>
+    <string name="enter_reps_text">Reps:</string>
+    <string name="reps_left_text">Reps:</string>
+    <string name="infinite_reps_text">Infinite Reps</string>
+    <string name="default_activity_time">30</string>
+    <string name="default_reps_count">10</string>
+    <string name="activity_name_hint">Activity Name</string>
+    <string name="seconds_text">seconds</string>
 </resources>

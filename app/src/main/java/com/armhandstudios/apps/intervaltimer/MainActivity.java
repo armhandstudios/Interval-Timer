@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
         startButton = (Button) findViewById(R.id.startTimerButton);
         primaryTimer = (SetIntervalTime) getSupportFragmentManager().findFragmentById(R.id.mainTimerFragment);
         secondaryTimer = (SetIntervalTime) getSupportFragmentManager().findFragmentById(R.id.secondaryTimerFragment);
         repsFragment = (RepsFragment) getSupportFragmentManager().findFragmentById(R.id.repsFragment);
-        primaryTimer.setCanBeZero(false);
+        primaryTimer.setCanBeZero(true);
         primaryTimer.setActivityNameText("Activity");
         secondaryTimer.setCanBeZero(true);
         secondaryTimer.setActivityNameText("Rest");
@@ -47,6 +47,15 @@ public class MainActivity extends AppCompatActivity
 
     private void runTimer(final View v)
     {
+        if(getCurrentFocus() != null && getCurrentFocus().getOnFocusChangeListener() != null)
+        {
+            getCurrentFocus().getOnFocusChangeListener().onFocusChange(getCurrentFocus(), false);
+        }
+        //won't start timer if no times are set
+        if(primaryTimer.getTimerValue() == 0 && secondaryTimer.getTimerValue() == 0)
+        {
+            return;
+        }
         Intent toTimer = new Intent(v.getContext(), TimerRunning.class);
         Bundle bundle = new Bundle();
         bundle.putString("mainActivityTitle", primaryTimer.getActivityNameText());

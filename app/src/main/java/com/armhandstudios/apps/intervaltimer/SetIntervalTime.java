@@ -64,28 +64,33 @@ public class SetIntervalTime extends Fragment
                 {
                     public void onFocusChange(View v, boolean hasFocus)
                     {
-                        if(hasFocus)
-                        {
-                            timerCount.setCursorVisible(true);
-                            prevValue = getTimerValue();
-                        }
-                        else
-                        {
-                            timerCount.setCursorVisible(false);
-                        }
-                        if(timerCount.getText().toString().equals(""))
-                        {
-                            timerCount.setText(String.valueOf(prevValue));
-                        }
-                        if(!canBeZero && Integer.parseInt(timerCount.getText().toString()) == 0)
-                        {
-                            timerCount.setText("1");
-                        }
+                        update(v, hasFocus);
                     }
                 }
         );
 
         return view;
+    }
+
+    public void update(View v, boolean hasFocus)
+    {
+        if(hasFocus)
+        {
+            timerCount.setCursorVisible(true);
+            prevValue = getTimerValue();
+        }
+        else
+        {
+            timerCount.setCursorVisible(false);
+        }
+        if(timerCount.getText().toString().equals(""))
+        {
+            timerCount.setText(String.valueOf(prevValue));
+        }
+        if(!canBeZero && Integer.parseInt(timerCount.getText().toString()) == 0)
+        {
+            timerCount.setText("1");
+        }
     }
 
     public void setCanBeZero(boolean b)

@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <CheckBox
-            android:text="Infinite Reps"
+            android:text="@string/infinite_reps_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/useRepsCheck"
@@ -24,7 +24,7 @@
             android:textColor="?attr/editTextColor"/>
 
         <TextView
-            android:text="Reps:"
+            android:text="@string/enter_reps_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/enterRepsText"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:id="@+id/enterReps"
-            android:text="10"
+            android:text="@string/default_reps_count"
             android:background="@android:color/transparent"
             android:padding="1dp"
             android:layout_alignBaseline="@+id/enterRepsText"

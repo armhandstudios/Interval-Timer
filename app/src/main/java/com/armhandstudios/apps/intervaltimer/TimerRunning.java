@@ -13,7 +13,7 @@ import android.widget.TextView;
 public class TimerRunning extends AppCompatActivity
 {
     private String mainTitle;
-    private String secondaryTitle;
+    private String restTitle;
     private int mainTime;
     private int restTime;
     private int reps;
@@ -46,7 +46,7 @@ public class TimerRunning extends AppCompatActivity
         {
             mainTitle = bundle.getString("mainActivityTitle");
             mainTime = bundle.getInt("mainTime");
-            secondaryTitle = bundle.getString("secondaryActivityTitle");
+            restTitle = bundle.getString("secondaryActivityTitle");
             restTime = bundle.getInt("restTime");
             reps = bundle.getInt("nReps");
         }
@@ -61,6 +61,13 @@ public class TimerRunning extends AppCompatActivity
 
         nRepsText.setVisibility(View.INVISIBLE);
         nReps.setVisibility(View.INVISIBLE);
+
+        if(restTime > 0 && mainTime == 0)
+        {
+            mainTime = restTime;
+            mainTitle = restTitle;
+            restTime = 0;
+        }
 
         setRepsText();
         if(reps < 0)
@@ -143,7 +150,7 @@ public class TimerRunning extends AppCompatActivity
                     if(restTime > 0)
                     {
                         activityTimer.setText(String.valueOf(restTime));
-                        intervalName.setText(secondaryTitle);
+                        intervalName.setText(restTitle);
                         toRun = rest;
                         tone();
                     }
@@ -152,6 +159,10 @@ public class TimerRunning extends AppCompatActivity
                         activityTimer.setText(String.valueOf(mainTime));
                         reps--;
                         setRepsText();
+                        if(reps == 0)
+                        {
+                            goBack(null);
+                        }
                         tone();
                     }
                 }

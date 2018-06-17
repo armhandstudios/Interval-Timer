@@ -13,7 +13,6 @@
         <EditText
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Activity Name"
             android:id="@+id/activityNameText"
             android:layout_width="wrap_content"
             android:background="@android:color/transparent"
@@ -24,10 +23,10 @@
             android:cursorVisible="false"
             android:singleLine="true"
             android:maxEms="10"
-            />
+            android:hint="@string/activity_name_hint"/>
 
         <TextView
-            android:text=":"
+            android:text="@string/colon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/colon"
@@ -61,11 +60,10 @@
             android:cursorVisible="false"/>
 
         <TextView
-            android:text="seconds"
+            android:text="@string/seconds_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/timeUnitsText"
-            tools:text="seconds"
             android:textColor="?attr/editTextColor"
             android:layout_alignBottom="@+id/colon"
             android:layout_toRightOf="@+id/timerCount"
